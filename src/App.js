@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import './App.css';
-import trash from './trash-fill.svg';
+
 class App extends Component {
   state = {
     tasks: []
   }
   constructor() {
+    super()
     for (let i = 0; i < localStorage.length; i++) {
       let nowKeyIs = localStorage.key(i);
       if (nowKeyIs.startsWith("todoTask")) {
@@ -17,7 +18,6 @@ class App extends Component {
       }
     }
   }
-  
 }
 
 export default App;
