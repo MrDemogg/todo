@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import './App.css';
+import busket from './trash-fill.svg';
+class TaskRender {
 
+}
 class App extends Component {
   state = {
     tasks: []
@@ -17,6 +20,13 @@ class App extends Component {
         this.state.tasks.append(task)
       }
     }
+  }
+  render() {
+    return (
+      <div class="tasks">
+
+      </div>
+    )
   }
 }
 
