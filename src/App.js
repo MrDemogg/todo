@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 import './App.css';
-import busket from './trash-fill.svg';
-class TaskRender {
-
-}
 class App extends Component {
   state = {
     tasks: []
@@ -21,10 +17,21 @@ class App extends Component {
       }
     }
   }
+  AddTaskForm = (props) => {
+    return (
+      <div className="tasks__task" id={props.id}>
+        <p id={props.id}>{props.text}</p>
+        <div className="tasks__buket" id={props.id}></div>
+      </div>
+    )
+  }
   render() {
     return (
-      <div class="tasks">
-
+      <div className="tasks">
+        <div className="tasks__create">
+          <input type="text" placeholder="Add new Task" className="tasks__input" />
+          <input type="button" value="Add" className="tasks__upload" />
+        </div>
       </div>
     )
   }
