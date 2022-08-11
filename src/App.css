@@ -1,41 +1,55 @@
-.tasks {
+.tasks-menu {
   margin: 50px auto;
-  width: 320px;
-  max-height: 141px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  width: 347px;
+  height: 200px;
   overflow-y: scroll;
+  border: 1px solid black
 }
-.tasks__create {
+.tasks-menu__create {
   width: 100%;
   height: 27px;
   display: flex;
   justify-content: space-between;
 }
-.tasks__input {
+.tasks-menu__input {
   width: 265px;
   height: 24px;
   border: 3px solid black;
   padding: 3px;
   text-align: center;
 }
-.tasks__upload {
+.tasks-menu__upload {
   width: 44px;
   height: 25px;
   border: 3px solid black;
   box-shadow: 2px 2px 1px 1px black;
 }
-.tasks__task {
-  width: 315px;
+.tasks-menu__task {
+  width: 98%;
   height: 27px;
   border: 3px solid black;
-  padding: 5px;
 }
-.tasks__buket {
+.tasks-menu__content {
   display: flex;
-  justify-content: end;
-  width: 20px;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0px auto
+}
+.tasks-menu__buket {
+  width: 25px;
+  height: 25px;
   background-image: url(./trash-fill.svg);
   background-repeat: no-repeat;
+  background-size: 20px 20px;
+  border: none;
+  background-color: #fff;
+  background-position: 50%;
+}
+.tasks-menu__buket:hover {
+  background-color: gray;
+}
+.tasks-menu__tasks {
+  width: 100%;
+  position: relative;
+  top: 20px
 }
