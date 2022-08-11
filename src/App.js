@@ -7,19 +7,30 @@ class App extends Component {
   }
   AddTaskForm = () => {
     let getId = 0
-    for (let i = 0; i < this.state.tasks.length; i++) {
-      getId = i + 1
-    }
     const newTasks = this.state.tasks;
+    const nums = [];
+    for (let i = 0; i < newTasks.length; i++) {
+      nums.push(newTasks[i].id)
+    }
+    getId = Math.max(...nums) + 1
     newTasks.push({text: this.state.newTaskText, id: getId})
     this.setState({
       tasks: newTasks
     })
   }
-  currentTask = (event) => {
+  constructor() {
+    super()
+    this.newMessage = ""
+  }
+  currentTask = () => {
+    console.log(this.newMessage)
+    const newState = this.state;
+    newState.newTaskText = this.newMessage
     this.setState({
-      newTaskText: event.currentTarget.value
+      newState
     })
+    console.log(this.state.newTaskText)
+    this.AddTaskForm()
   }
   DelTaskForm = (event) => {
     const newTasks = this.state.tasks;
@@ -48,7 +59,7 @@ class App extends Component {
     return (
       <div className="tasks-menu">
         <div className="tasks-menu__create">
-          <input type="text" className="tasks-menu__input" placeholder="Input text" />
+          <input type="text" className="tasks-menu__input" placeholder="Input text" onChange={(e) => {this.newMessage = e.currentTarget.value; console.log(e.currentTarget.value)}} />
             <button className="tasks-menu__upload" onClick={() => this.currentTask()}>Add</button>
         </div>
         <div className="tasks-menu__tasks">
