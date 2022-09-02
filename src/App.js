@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import './App.css';
 class App extends Component {
   state = {
     tasks: [{text: 'Buy milk', id: 0}, {text: 'Walk with dog', id: 1}, {text: 'Do homework', id: 2}],
